@@ -16,7 +16,7 @@ public:
         if(root==NULL){
             return INT_MAX;
         }
-        if(!root->left && !root->right) return 1;
+        if(root->left==NULL && root->right==NULL) return 1;
 
         int left =  miniDepth(root->left);
         int right = miniDepth(root->right);
