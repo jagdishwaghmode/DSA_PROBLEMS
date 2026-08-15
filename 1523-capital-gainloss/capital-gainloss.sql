@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+select stock_name,sum(final) as capital_gain_loss from (select *,if(operation = 'Buy' , -price,price) as final from Stocks) as t group by t.stock_name order by capital_gain_loss 
