@@ -8,16 +8,12 @@ public:
         long long ans = 0;
 
         for(int i = 0; i < nums.size(); i++) {
-
             if(nums[i] == maximum)
                 cnt++;
-
             while(cnt >= k) {
                 ans += nums.size() - i;
-
                 if(nums[j] == maximum)
                     cnt--;
-
                 j++;
             }
         }
