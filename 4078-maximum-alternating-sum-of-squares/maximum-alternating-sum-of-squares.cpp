@@ -1,21 +1,22 @@
 class Solution {
 public:
     long long maxAlternatingSum(vector<int>& nums) {
+        vector<long long> square;
         int n = nums.size();
-        vector<long long> ans;
         for(int i = 0; i<n; i++){
-            long long square = nums[i]*nums[i];
-            ans.push_back(square);
+            long long s = pow(nums[i],2);
+            square.push_back(s);
         }
-        sort(ans.begin(),ans.end());
+        sort(square.begin(),square.end());
         long long sum1 = 0;
         long long sum2 = 0;
         for(int i = 0; i<n/2; i++){
-            sum1+=ans[i];
+            sum1+=square[i];
         }
         for(int i = n/2; i<n; i++){
-            sum2+=ans[i];
+            sum2+=square[i];
         }
+
         return sum2-sum1;
     }
 };
